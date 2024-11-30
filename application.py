@@ -19,7 +19,7 @@ def index():
 def pridect():
     result = ""
     
-    if request.method=='POST':
+    if request.method=="POST":
         Pregnancies=int(request.form.get("pregnancies"))
         Glucose = float(request.form.get('glucose'))
         BloodPressure = float(request.form.get('bloodpressure'))
@@ -38,7 +38,7 @@ def pridect():
         else:
             result = "Non Diabetic"
             
-        return render_template("index.html",result = result)
+    return render_template("index.html",result = result)
 
 if __name__=="__main__":
     app.run(host="0.0.0.0")
